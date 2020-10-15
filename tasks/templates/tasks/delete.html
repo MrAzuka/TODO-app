@@ -1,0 +1,27 @@
+<style>
+     body{
+                background-color: #f32f2f;
+            }
+     .but-delete{
+                background-color: #ffae19;
+                border-color: #000000;
+            }
+      a{
+         background-color: #f44336;
+  color: black;
+
+  text-decoration: underline;
+  display: inline-block;
+      }
+</style>
+
+
+<body>
+    <p>Are you sure you want to delete "{{item}}"?</p>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input class="btn btn-sm but-delete" type="submit" value="Confirm">
+    </form>
+    <a href="{% url 'index' %}">Cancel</a>
+</body>
