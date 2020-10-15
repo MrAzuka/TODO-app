@@ -1,27 +1,19 @@
 <style>
-     body{
-                background-color: #f32f2f;
-            }
-     .but-delete{
-                background-color: #ffae19;
-                border-color: #000000;
-            }
-      a{
-         background-color: #f44336;
-  color: black;
 
-  text-decoration: underline;
-  display: inline-block;
-      }
 </style>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
 <body>
-    <p>Are you sure you want to delete "{{item}}"?</p>
+<div class="row mt-5">
+    <p class="lead text-center col-sm-12">Are you sure you want to delete <span class="font-weight-bold text-danger">"{{item}}"</span> ?</p>
 
-    <form action="" method="POST">
+    <form action="" method="POST" class="mx-auto">
         {% csrf_token %}
-        <input class="btn btn-sm but-delete" type="submit" value="Confirm">
+        <input class="btn mb-4 btn-danger btn-block" type="submit" value="Confirm">
+        <a href="{% url 'index' %}" class="btn btn-primary btn-block">Cancel</a>
     </form>
-    <a href="{% url 'index' %}">Cancel</a>
+
+</div>
+
 </body>
